@@ -1,5 +1,5 @@
-const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
-const assert = require("assert");
+const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID, ANALYTICS_ID } =
+  process.env;
 const colors = require("./src/colors.json");
 
 const plugins = [
@@ -22,8 +22,8 @@ const plugins = [
   {
     resolve: "gatsby-source-contentful",
     options: {
-      spaceId: SPACE_ID,
-      accessToken: ACCESS_TOKEN,
+      spaceId: CONTENTFUL_SPACE_ID,
+      accessToken: CONTENTFUL_ACCESS_TOKEN,
     },
   },
 ];
