@@ -1,6 +1,6 @@
-import { IconName } from '@fortawesome/fontawesome-svg-core';
-import { DefaultTheme } from 'styled-components';
-import { Theme as RebassTheme } from '@rebass/preset';
+import { IconName } from "@fortawesome/fontawesome-svg-core";
+import { DefaultTheme } from "styled-components";
+import { Theme as RebassTheme } from "@rebass/preset";
 
 export type Theme = DefaultTheme & RebassTheme;
 
@@ -25,7 +25,7 @@ export type Project = {
 
 export type AboutMe = {
   markdown: string;
-  profile: Image;
+  portrait: Image;
 };
 
 export type SocialLink = {
