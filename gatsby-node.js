@@ -1,4 +1,5 @@
-const { ACCESS_TOKEN, SPACE_ID, ANALYTICS_ID } = process.env;
+const { CONTENTFUL_ACCESS_TOKEN, CONTENTFUL_SPACE_ID, ANALYTICS_ID } =
+  process.env;
 const assert = require("assert");
 const gatsbySourceMedium = require("gatsby-source-medium/gatsby-node");
 const { createClient } = require("contentful");
@@ -10,7 +11,10 @@ const NotFoundTemplate = require.resolve(`./src/templates/NotFound.tsx`);
 
 exports.sourceNodes = async (gatsbyConfig, themeOptions) => {
   console.log(themeOptions);
-  const client = createClient({ space: SPACE_ID, accessToken: ACCESS_TOKEN });
+  const client = createClient({
+    space: CONTENTFUL_SPACE_ID,
+    accessToken: CONTENTFUL_ACCESS_TOKEN,
+  });
 
   const { items } = await client.getEntries();
   const about = items.find(getAboutEntry);
