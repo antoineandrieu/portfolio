@@ -9,7 +9,8 @@ export type QueryResponse = {
       description: string;
       homepage: string;
       repository: string;
-      publishedDate: string;
+      startDate: string;
+      endDate: string;
       type: string;
       logo: {
         title: string;
@@ -31,7 +32,8 @@ export const useProjectsQuery = (): Project[] => {
           description
           homepage: projectUrl
           repository: repositoryUrl
-          publishedDate(formatString: "YYYY")
+          startDate(formatString: "YYYY")
+          endDate(formatString: "YYYY")
           type
           logo {
             title

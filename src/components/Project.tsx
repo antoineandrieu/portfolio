@@ -1,11 +1,11 @@
-import React from 'react';
-import SocialLink from '../components/SocialLink';
-import ImageLabel from './ImageLabel';
-import Hide from '../components/Hide';
-import { Box, Flex, Image, Text } from 'rebass/styled-components';
-import styled from 'styled-components';
-import { Project as ProjectType } from '../types';
-import { Card } from './Card';
+import React from "react";
+import SocialLink from "../components/SocialLink";
+import ImageLabel from "./ImageLabel";
+import Hide from "../components/Hide";
+import { Box, Flex, Image, Text } from "rebass/styled-components";
+import styled from "styled-components";
+import { Project as ProjectType } from "../types";
+import { Card } from "./Card";
 
 type Props = ProjectType;
 
@@ -15,7 +15,8 @@ const Project = ({
   homepage,
   repository,
   type,
-  publishedDate,
+  startDate,
+  endDate,
   logo,
 }: Props) => (
   <Card p={0}>
@@ -26,7 +27,7 @@ const Project = ({
             {name}
           </Title>
         </span>
-        <Text width={[1]} style={{ overflow: 'auto' }} color="text">
+        <Text width={[1]} style={{ overflow: "auto" }} color="text">
           {description}
         </Text>
       </TextContainer>
@@ -34,10 +35,15 @@ const Project = ({
       <ImageContainer>
         <ProjectImage {...logo} />
         <ProjectTag>
+          <Hide query="md">
+            <ImageLabel bg="muted" color="primary">
+              {startDate} - {endDate}
+            </ImageLabel>
+          </Hide>
           <Flex
             m={1}
             style={{
-              float: 'right',
+              float: "right",
             }}
           >
             <Box mx={1} fontSize={4}>
@@ -55,20 +61,15 @@ const Project = ({
           >
             {type}
           </ImageLabel>
-          <Hide query="md">
-            <ImageLabel bg="muted" color="primary">
-              {publishedDate}
-            </ImageLabel>
-          </Hide>
         </ProjectTag>
       </ImageContainer>
     </Flex>
   </Card>
 );
 
-const CARD_HEIGHT = '200px';
+const CARD_HEIGHT = "200px";
 
-const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
+const MEDIA_QUERY_SMALL = "@media (max-width: 400px)";
 
 const Title = styled(Text)`
   font-size: 14px;
@@ -100,14 +101,16 @@ const ImageContainer = styled.div`
 `;
 
 const ProjectImage = styled(Image)`
+  width: auto;
+  height: auto;
   width: ${CARD_HEIGHT};
   height: ${CARD_HEIGHT};
-  padding: 40px;
+  padding: 45px 10px 45px 0px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
+    max-height: calc(${CARD_HEIGHT} / 2);
+    max-width: calc(${CARD_HEIGHT} / 2);
     margin-top: calc(${CARD_HEIGHT} / 4);
     padding: 10px;
   }

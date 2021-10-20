@@ -19,7 +19,8 @@ export type Project = {
   homepage: string;
   repository: string;
   type: string;
-  publishedDate: string;
+  startDate: string;
+  endDate: string;
   logo: Image;
 };
 
