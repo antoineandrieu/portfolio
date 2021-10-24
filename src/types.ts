@@ -36,11 +36,13 @@ export type SocialLink = {
 };
 
 export type BlogPost = {
+  slug: string;
   title: string;
+  cover: Image;
   date: string;
   readingTime: string;
-  content: string;
   devtoUrl: string;
+  content: string;
 };
 
 export type MediumAuthor = {

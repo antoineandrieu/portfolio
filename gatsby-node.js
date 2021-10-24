@@ -33,7 +33,6 @@ exports.createPages = async ({ actions }, themeOptions) => {
     accessToken: CONTENTFUL_ACCESS_TOKEN,
   });
   const { items } = await client.getEntries();
-  items.forEach((item) => console.log(item.sys.contentType.sys.id));
   const posts = items.filter(getBlogPostEntry);
 
   createPage({
