@@ -15,7 +15,7 @@ const Home = (context) => {
       <Landing />
       <About />
       <Projects />
-      {posts && <Writing posts={posts} />}
+      {posts.length && <Writing posts={posts} />}
       <Footer />
     </Layout>
   );
