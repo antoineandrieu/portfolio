@@ -14,6 +14,7 @@ const About = () => {
 
   return (
     <Section.Container id={SECTION.about} Background={Background}>
+      <a href="/slughy">HELLO</a>
       <Section.Header name={SECTION.about} icon="🙋‍♂️" label="person" />
       <Flex justifyContent="center" alignItems="center" flexWrap="wrap">
         <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]} mt={2}>

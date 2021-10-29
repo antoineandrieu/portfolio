@@ -1,21 +1,25 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Landing from '../sections/Landing';
-import About from '../sections/About';
-import Projects from '../sections/Projects';
-import Writing from '../sections/Writing';
-import Footer from '../components/Footer';
+import React, { useEffect } from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
+import Post from "../sections/Post";
 
-const Home = () => (
-  <Layout>
-    <Header />
-    <Landing />
-    <About />
-    <Projects />
-    <Writing />
-    <Footer />
-  </Layout>
-);
+const BlogPost = () => {
+  // useEffect(() => {
+  //   // Prevent browser to going back to previous scroll position
+  //   console.log(window.history);
+  //   if ("scrollRestoration" in window.history) {
+  //     window.history.scrollRestoration = "manual";
+  //   }
+  // });
 
-export default Home;
+  return (
+    <Layout>
+      <Header isHomePage={false} />
+      <Post />
+      <Footer />
+    </Layout>
+  );
+};
+
+export default BlogPost;

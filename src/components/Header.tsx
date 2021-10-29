@@ -1,15 +1,23 @@
-import React from 'react';
-import Headroom from 'react-headroom';
-import { Box, Link as RebassLink, Flex, Image } from 'rebass/styled-components';
-import styled from 'styled-components';
-import Link from './Link';
-import { capitalize } from '../utils/string';
-import { useHelmetQuery } from '../queries/useHelmetQuery';
-import { SECTION } from '../utils/constants';
-import { getSectionHref } from '../utils/helpers';
+import React from "react";
+import Headroom from "react-headroom";
+import { Box, Link as RebassLink, Flex, Image } from "rebass/styled-components";
+import styled from "styled-components";
+import Link from "./Link";
+import { capitalize } from "../utils/string";
+import { useHelmetQuery } from "../queries/useHelmetQuery";
+import { SECTION } from "../utils/constants";
+import { getSectionHref } from "../utils/helpers";
 
-const Header = () => {
+type HeaderProps = {
+  isHomePage: boolean;
+};
+
+const Header = ({ isHomePage }: HeaderProps) => {
   const { profile } = useHelmetQuery();
+
+  const homeLink = isHomePage
+    ? `#${getSectionHref(SECTION.home)}`
+    : `/#${getSectionHref(SECTION.home)}`;
 
   return (
     <StyledHeadroom>
@@ -19,24 +27,24 @@ const Header = () => {
         alignItems="center"
         px={3}
       >
-        <RebassLink href={`#${getSectionHref(SECTION.home)}`} variant="empty">
+        <RebassLink href={homeLink} variant="empty">
           <Flex justifyContent="center">
             <Image
               src={profile.bigIcon.src}
-              height={['60px', '80px']}
-              width={['60px', '80px']}
+              height={["60px", "80px"]}
+              width={["60px", "80px"]}
               alt="Portfolio Logo"
               p={2}
-              css={{ borderRadius: '20px', cursor: 'pointer' }}
+              css={{ borderRadius: "20px", cursor: "pointer" }}
             />
           </Flex>
         </RebassLink>
         <Flex mr={[0, 3, 5]}>
           {Object.keys(SECTION)
-            .filter((id) => id !== 'home')
+            .filter((id) => id !== "home")
             .map((id) => (
               <Box key={id} ml={[2, 3]} color="background" fontSize={[2, 3]}>
-                <Link href={`#${id}`} tabIndex={0}>
+                <Link href={isHomePage ? `#${id}` : `/#${id}`} tabIndex={0}>
                   {capitalize(id)}
                 </Link>
               </Box>

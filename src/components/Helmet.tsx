@@ -1,8 +1,8 @@
-import React from 'react';
-import { Helmet as ReactHelmet } from 'react-helmet';
-import { withTheme } from 'styled-components';
-import { Theme } from '../types';
-import { useHelmetQuery } from '../queries/useHelmetQuery';
+import React from "react";
+import { Helmet as ReactHelmet } from "react-helmet";
+import { withTheme } from "styled-components";
+import { Theme } from "../types";
+import { useHelmetQuery } from "../queries/useHelmetQuery";
 
 type Props = {
   theme: Theme;
@@ -13,7 +13,7 @@ const Helmet = ({ theme }: Props) => {
   const title = `${name} Portfolio`;
 
   return (
-    <ReactHelmet htmlAttributes={{ lang: 'en' }}>
+    <ReactHelmet htmlAttributes={{ lang: "en" }}>
       <meta charSet="utf-8" />
       <title>{title}</title>
       <meta name="description" content={description} />
