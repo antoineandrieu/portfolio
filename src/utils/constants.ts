@@ -9,5 +9,5 @@ export enum SECTION {
   home = "Home",
   about = "About me",
   projects = "Projects",
-  writing = "Writing",
+  // writing = "Writing",
 }

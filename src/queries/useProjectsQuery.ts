@@ -8,7 +8,6 @@ export type QueryResponse = {
       name: string;
       description: string;
       homepage: string;
-      repository: string;
       startDate: string;
       endDate: string;
       type: string;
@@ -31,7 +30,6 @@ export const useProjectsQuery = (): Project[] => {
           name
           description
           homepage: projectUrl
-          repository: repositoryUrl
           startDate(formatString: "YYYY")
           endDate(formatString: "YYYY")
           type
