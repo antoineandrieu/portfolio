@@ -26,8 +26,9 @@
     "@rebass/preset": "^4.0.5",
     "@tippy.js/react": "^3.1.1",
     "assert": "^2.0.0",
-    "gatsby": "^3.14.3",
     "babel-plugin-styled-components": "^1.13.2",
+    "gatsby": "^3.14.3",
+    "gatsby-plugin-google-analytics": "^4.1.0",
     "gatsby-plugin-image": "^1.11.0",
     "gatsby-plugin-manifest": "^3.11.0",
     "gatsby-plugin-react-helmet": "^4.11.0",
@@ -38,8 +39,8 @@
     "gatsby-source-medium": "^3.11.0",
     "gatsby-transformer-remark": "^4.8.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-awesome-reveal": "^3.8.1",
+    "react-dom": "^17.0.2",
     "react-headroom": "^3.1.1",
     "react-helmet": "^6.1.0",
     "react-markdown": "^7.0.0",
@@ -51,11 +52,11 @@
     "@types/react-headroom": "^2.2.2",
     "@types/react-helmet": "^6.1.2",
     "@types/rebass": "^4.0.9",
-    "typescript": "^4.3.5",
-    "process": "^0.11.10",
-    "env-cmd": "^10.1.0",
     "chalk": "^4.1.2",
     "contentful-import": "^8.2.23",
-    "inquirer": "^8.2.0"
+    "env-cmd": "^10.1.0",
+    "inquirer": "^8.2.0",
+    "process": "^0.11.10",
+    "typescript": "^4.3.5"
   }
 }
